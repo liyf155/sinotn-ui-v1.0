@@ -22,6 +22,8 @@ import './permission'
 import * as filters from './filters'
 // 国际化
 import i18n from './i18n'
+// Mock
+import './mock'
 
 Vue.config.productionTip = false
 
@@ -34,9 +36,17 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+// new Vue({
+//   router,
+//   store,
+//   i18n,
+//   render: h => h(App)
+// }).$mount('#app')
+
 new Vue({
+  el: '#app',
   router,
   store,
   i18n,
   render: h => h(App)
-}).$mount('#app')
+})
